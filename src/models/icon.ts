@@ -1,1 +1,1 @@
-export type IconName = 'search' | 'fav' | 'list' | 'close';
+export type IconNames = 'search' | 'fav' | 'list' | 'close';

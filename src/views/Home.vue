@@ -8,7 +8,7 @@ const router = useRouter();
       <img
         src="@/assets/images/circle.svg"
         alt="Circle"
-        class="absolute inset-0 top-[23.5%] left-[14.5%] -z-10"
+        class="absolute inset-0 top-[23.5%] left-[14.5%]"
       />
       <img src="@/assets/images/pikachu.svg" alt="Pikachu" class="relative z-10" />
     </div>

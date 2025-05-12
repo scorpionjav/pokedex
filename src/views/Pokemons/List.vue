@@ -30,10 +30,10 @@ const loadPokemons = async () => {
     const response = await getPokemons(offset.value, limit);
 
     const newPokemons = response
-      .filter(({ name }) => !pokemons.value.some((p) => p.name === name))
-      .map(({ name }) => ({
-        name,
-        isFavorite: favoritesStore.isFavorite(name),
+      .filter((pokemon: Pokemon) => !pokemons.value.some((p) => p.name === pokemon.name))
+      .map((pokemon: Pokemon) => ({
+        name: pokemon.name,
+        isFavorite: favoritesStore.isFavorite(pokemon.name),
       }));
 
     pokemons.value.push(...newPokemons);
@@ -122,11 +122,15 @@ watch(searchQuery, (newQuery) => {
     const trimmed = newQuery.trim().toLowerCase();
     if (!trimmed) return;
 
-    const exists = pokemons.value.some((p) => p.name.toLowerCase().includes(trimmed));
+    const exists = pokemons.value.some((pokemon: Pokemon) =>
+      pokemon.name.toLowerCase().includes(trimmed),
+    );
     if (!exists) {
       const details = await fetchPokemonDetails(trimmed);
       if (details) {
-        const alreadyExists = pokemons.value.some((p) => p.name === details.name);
+        const alreadyExists = pokemons.value.some(
+          (pokemon: Pokemon) => pokemon.name === details.name,
+        );
         if (!alreadyExists) {
           pokemons.value.push(details);
         }
@@ -145,7 +149,7 @@ watch(
 );
 </script>
 <template>
-  <Modal name="PokemonDetails">
+  <Modal v-if="pokemonDetails" name="PokemonDetails">
     <PokemonCard :pokemon="pokemonDetails" :toggleFavorite="handleFavorite" />
   </Modal>
   <div

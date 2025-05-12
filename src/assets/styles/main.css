@@ -1,0 +1,19 @@
+@import './css-reset';
+@import 'tailwindcss';
+@import './typography';
+
+@theme {
+  --color-yellow: rgba(236, 165, 57, 1);
+  --color-red-dark: #c00e20;
+  --color-red: #f22539;
+  --color-neutral-1: rgba(53, 53, 53, 1);
+  --color-neutral-2: rgba(94, 94, 94, 1);
+  --color-neutral-3: rgba(191, 191, 191, 1);
+  --color-neutral-4: rgba(232, 232, 232, 1);
+  --color-neutral-5: rgba(245, 245, 245, 1);
+  --color-neutral-6: rgba(249, 249, 249, 1);
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}

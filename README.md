@@ -107,4 +107,14 @@ PD: Incluso para ayudar a generar este documento 🫣.
    npm run dev
    ```
 
-4. Abre la aplicación en tu navegador en `http://localhost:5173`.
+4. Abre la aplicación en tu navegador en [http://localhost:5173](http://localhost:5173)
+
+## 🔗 Demo en producción
+
+Puedes acceder a la app desplegada en **Vercel** aquí:
+
+👉 [https://pokedex-sigma-eosin.vercel.app](https://pokedex-sigma-eosin.vercel.app)
+
+## 👨‍💻 Autor
+
+Desarrollado por **Jesús Acevedo**.
